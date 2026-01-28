@@ -27,13 +27,28 @@ public class TimeFrame {
 		return minutes;
 	}
 	
+	@Override
+	public boolean equals(Object o) {
+		if(this == o) return true;
+		if(!(o instanceof TimeFrame)) return false;
+		TimeFrame other = (TimeFrame) o;
+		return this.minutes == other.minutes;
+		
+	}
+	
+	@Override 
+	public int hashCode() {
+		return Integer.hashCode(minutes);
+	}
+	
+	
 	
 
 	public static void main(String[] args) {
 		TimeFrame t1 = TimeFrame.ofMinutes(10);
-		TimeFrame t2 = TimeFrame.ofMinutes(15);
+		TimeFrame t2 = TimeFrame.ofMinutes(10);
 		
-		System.out.println(t1 == t2);
+		System.out.println(t1.equals(t2));
 
 	}
 

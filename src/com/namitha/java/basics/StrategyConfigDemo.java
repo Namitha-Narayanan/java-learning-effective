@@ -6,14 +6,17 @@ public class StrategyConfigDemo {
 		StrategyConfig h1 = StrategyConfig.builder()
 				.timeFrame(TimeFrame.ofMinutes(60))
 				.lookback(Lookback.of(120))
+				.side(Side.BUY)
 				.build();
 		
 		StrategyConfig m5 = StrategyConfig.builder()
-					.timeFrame(TimeFrame.ofMinutes(5))
-					.lookback(Lookback.of(250))
+					.timeFrame(TimeFrame.ofMinutes(60))
+					.lookback(Lookback.of(120))
+					.side(Side.BUY)
 					.build();
 				
-		System.out.println(m5);
+		System.out.println(m5.equals(h1));
+		System.out.println("HashCode for Config m5: " +m5.hashCode()+" \nHashCode for Config h1: " +h1.hashCode());;
 
 	}
 
