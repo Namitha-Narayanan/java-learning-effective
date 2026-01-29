@@ -1,22 +1,19 @@
 package com.namitha.java.basics;
 
-public enum Side {
-//	BUY,
-//	SELL
+public enum PositionSide {
 	
-	
-	BUY(1),
-	SELL(-1);
+	LONG(+1),
+	SHORT(-1);
 	
 	private final int direction;
 	
-	Side(int direction){
+	PositionSide(int direction){
 		this.direction = direction;
 	}
 	
 	public int direction() {
 		return direction;
 	}
+	
+//PnL = sign * priceChange
 }
-
-

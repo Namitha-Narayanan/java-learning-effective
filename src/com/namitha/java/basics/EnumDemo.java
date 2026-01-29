@@ -2,18 +2,17 @@ package com.namitha.java.basics;
 
 public class EnumDemo {
 	public static void main(String[] args) {
-		Side side = Side.BUY;
-		
-		//Side side = Side.SELL;
+		PositionSide side = PositionSide.LONG;
 		
 		
-		if(side == Side.BUY) {
-			//System.out.println("Entering Long Position");
-			System.out.println(side.direction());
-		}else {
-			//System.out.println("Entering Short Position");
-			System.out.println(side.direction());
-		}
+		double priceChange = 0.0025;
+		int quantity = 100000;
+		
+		double pnl = side.direction() * priceChange * quantity;
+		
+		
+		System.out.println("Position Side: " +side);
+		System.out.println("PnL impact: " +pnl);
 	}
 }
 //pnl += side.direction() * priceChange * quantity

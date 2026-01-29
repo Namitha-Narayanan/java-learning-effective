@@ -6,7 +6,7 @@ public final class StrategyConfig {
 	
 	private final TimeFrame timeFrame;
 	private final Lookback lookback;
-	private final Side side;
+	private final PositionSide side;
 	
 	private StrategyConfig(Builder builder) {
 		this.timeFrame = builder.timeFrame;
@@ -26,7 +26,7 @@ public final class StrategyConfig {
 		return lookback;
 	}
 	
-	public Side side() {
+	public PositionSide side() {
 		return side;
 	}
 	
@@ -34,7 +34,7 @@ public final class StrategyConfig {
 		
 		private TimeFrame timeFrame;
 		private Lookback lookback;
-		private Side side;
+		private PositionSide side;
 		
 		private Builder() {}
 		
@@ -48,7 +48,7 @@ public final class StrategyConfig {
 			return this;
 		}
 		
-		public Builder side(Side side) {
+		public Builder side(PositionSide side) {
 			this.side = Objects.requireNonNull(side,"side");
 			return this;
 		}

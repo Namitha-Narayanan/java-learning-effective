@@ -6,13 +6,13 @@ public class StrategyConfigDemo {
 		StrategyConfig h1 = StrategyConfig.builder()
 				.timeFrame(TimeFrame.ofMinutes(60))
 				.lookback(Lookback.of(120))
-				.side(Side.BUY)
+				.side(PositionSide.LONG)
 				.build();
 		
 		StrategyConfig m5 = StrategyConfig.builder()
 					.timeFrame(TimeFrame.ofMinutes(60))
 					.lookback(Lookback.of(120))
-					.side(Side.BUY)
+					.side(PositionSide.LONG)
 					.build();
 				
 		System.out.println(m5.equals(h1));
